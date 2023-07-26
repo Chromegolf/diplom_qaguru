@@ -1,2 +1,5 @@
 .idea
+allure
 tests/allure-results
+tests/api/allure-results
+tests/ui/allure-results
