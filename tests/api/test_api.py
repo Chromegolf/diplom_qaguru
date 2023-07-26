@@ -26,7 +26,6 @@ def test_users_list_default_length():
     assert len(response.json()['data']) == default_users_count
     validate(instance=response.json(), schema=schema)
 
-
 @allure.tag('api')
 @allure.title('Поиск не существующего пользователя')
 def test_single_user_not_found():
