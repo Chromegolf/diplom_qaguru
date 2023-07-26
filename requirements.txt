@@ -5,3 +5,4 @@ requests~=2.31.0
 curlify~=2.2.1
 jsonschema~=4.17.3
 python-dotenv==0.20.0
+*.jar
