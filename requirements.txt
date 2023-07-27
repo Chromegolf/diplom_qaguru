@@ -1,6 +1,6 @@
 pytest==7.3.0
 allure-pytest==2.9.45
-selene>=2.0.0rc3post1
+selene>=2.0.0b15
 selenium==4.10.0
 webdriver-manager==3.8.6
 requests~=2.31.0
