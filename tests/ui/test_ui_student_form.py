@@ -1,4 +1,4 @@
-from data.users import User, Gender, Subject, Hobby
+from data.users_student import User, Gender, Subject, Hobby
 from package.registration_page import RegistrationPage
 from datetime import date
 from utils import attach

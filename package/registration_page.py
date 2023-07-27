@@ -1,6 +1,6 @@
 from selene import browser, have, command
 from tests.conftest import RESOURCE_PATH
-from data.users import User
+from data.users_student import User
 
 class RegistrationPage:
 
