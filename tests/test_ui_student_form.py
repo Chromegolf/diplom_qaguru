@@ -5,7 +5,8 @@ from utils import attach
 import allure
 from selene import browser
 
-
+@allure.tag('ui')
+@allure.title('Создание пользователя')
 def test_student_registration_form():
     # GIVEN_
     student = User(

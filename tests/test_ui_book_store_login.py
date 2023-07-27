@@ -4,7 +4,8 @@ from utils import attach
 import allure
 from selene import browser
 
-
+@allure.tag('ui')
+@allure.title('Авторизация пользователя')
 def test_login_form():
     user = BookUser(
         username='Ivanoff',
