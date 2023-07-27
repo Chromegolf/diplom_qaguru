@@ -1,6 +1,8 @@
-pytest>=7.3.0
+pytest==7.3.0
 allure-pytest==2.9.45
-selene==2.0.0rc2
+selene==2.0.0rc3
+selenium==4.10.0
+webdriver-manager==3.8.6
 requests~=2.31.0
 curlify~=2.2.1
 jsonschema~=4.17.3

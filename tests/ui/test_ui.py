@@ -1,11 +1,11 @@
 from data.user import User
 from package.login_page import LoginPage
 
+from selene import browser
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager(driver_version='114.0.5708.0').install()))
+browser.config.driver_options = webdriver.ChromeOptions()
+browser.config.driver_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 def test_login_form():
     user = User(
