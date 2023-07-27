@@ -4,12 +4,7 @@ from utils import attach
 import allure
 from selene import browser
 
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome(service=ChromeService(
-    ChromeDriverManager().install()))
 @allure.tag('ui')
 @allure.title('Авторизация пользователя')
 def test_login_form():
