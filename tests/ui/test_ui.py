@@ -1,21 +1,45 @@
-from data.user import User
-from package.login_page import LoginPage
-
+from data.users import User, Gender, Subject, Hobby
+from package.registration_page import RegistrationPage
+from datetime import date
+from utils import attach
+import allure
 from selene import browser
-from selenium import webdriver
 
-browser.config.driver_options = webdriver.ChromeOptions()
-browser.config.driver_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
-def test_login_form():
-    user = User(
+def test_student_registration_form():
+    # GIVEN_
+    student = User(
         first_name='Ivan',
         last_name='Ivanov',
-        user_name='ivanoff',
-        password='Test123#'
+        email='ivanov@gmail.com',
+        phone='8800100300',
+        gender=Gender.male.value,
+        birthday=date(1990, 8, 1),
+        subjects=[Subject.computer_science.value, Subject.english.value],
+        hobbies=[Hobby.reading.value],
+        upload_picture='test_picture.png',
+        current_address='Russia, Moscow',
+        state='Haryana',
+        city='Karnal'
     )
 
-    login_page = LoginPage()
-    login_page.open()
+    reg_page = RegistrationPage()
 
-    login_page.set_user_info(user)
+    with allure.step("Открываем страницу регистрации"):
+        reg_page.open()
+
+    # WHEN
+    with allure.step("Заполняем данные студента"):
+        reg_page.register(student)
+
+    with allure.step("Сохраняем данные студента"):
+        reg_page.submit()
+
+    # THEN
+    with allure.step("Проверяем соответствие заполненных данных переданным"):
+        reg_page.should_registered_user(student)
+
+    attach.add_html(browser)
+    attach.add_logs(browser)
+    attach.add_screenshot(browser)
+    attach.add_video(browser)

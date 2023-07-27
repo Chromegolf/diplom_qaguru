@@ -25,7 +25,7 @@ def pytest_addoption(parser):
     )
 
 
-@pytest.fixture(scope="module", autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def set_browser():
     browser.config.window_width = 1920
     browser.config.window_height = 1080
