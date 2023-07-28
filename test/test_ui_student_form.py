@@ -1,0 +1,47 @@
+from data.users_student import User, Gender, Subject, Hobby
+from package.registration_page import RegistrationPage
+from datetime import date
+from utils import attach
+import allure
+from selene import browser
+
+
+@allure.tag('ui')
+@allure.title('Создание пользователя')
+def test_student_registration_form(setup_browser):
+    # GIVEN_
+    student = User(
+        first_name='Ivan',
+        last_name='Ivanov',
+        email='ivanov@gmail.com',
+        phone='8800100300',
+        gender=Gender.male.value,
+        birthday=date(1990, 8, 1),
+        subjects=[Subject.computer_science.value, Subject.english.value],
+        hobbies=[Hobby.reading.value],
+        upload_picture='test_picture.png',
+        current_address='Russia, Moscow',
+        state='Haryana',
+        city='Karnal'
+    )
+
+    reg_page = RegistrationPage()
+
+    with allure.step("Открываем страницу регистрации"):
+        reg_page.open()
+
+    # WHEN
+    with allure.step("Заполняем данные студента"):
+        reg_page.register(student)
+
+    with allure.step("Сохраняем данные студента"):
+        reg_page.submit()
+
+    # THEN
+    with allure.step("Проверяем соответствие заполненных данных переданным"):
+        reg_page.should_registered_user(student)
+
+    attach.add_html(browser)
+    attach.add_logs(browser)
+    attach.add_screenshot(browser)
+    attach.add_video(browser)
