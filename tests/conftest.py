@@ -37,7 +37,7 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
     browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
@@ -59,8 +59,8 @@ def setup_browser(request):
         command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options
     )
-    ##browser.config.driver = driver
-    browser = Browser(Config(driver))
+    browser.config.driver = driver
+    ##browser = Browser(Config(driver))
 
     yield browser
 
