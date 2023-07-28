@@ -29,4 +29,3 @@ def test_login_form():
     attach.add_logs(browser)
     attach.add_screenshot(browser)
     attach.add_video(browser)
-
