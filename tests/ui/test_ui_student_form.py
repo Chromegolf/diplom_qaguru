@@ -8,7 +8,7 @@ from selene import browser
 
 @allure.tag('ui')
 @allure.title('Создание пользователя')
-def test_student_registration_form():
+def test_student_registration_form(setup_browser):
     # GIVEN_
     student = User(
         first_name='Ivan',
