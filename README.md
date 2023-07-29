@@ -30,4 +30,4 @@ pytest .
 
 По результату прогона отправляется уведомление в телеграм:
 
-[(https://github.com/Chromegolf/diplom_qaguru/blob/master/resources/tg.png)]
+(https://github.com/Chromegolf/diplom_qaguru/blob/master/resources/tg.png)
