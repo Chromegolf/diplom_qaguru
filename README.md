@@ -29,5 +29,6 @@ pytest .
 - Пример отчета: https://jenkins.autotests.cloud/job/diplom/59/allure/
 
 По результату прогона отправляется уведомление в телеграм:
+![Текст с описанием картинки](/resources/tg.png)
 
-!(https://github.com/Chromegolf/diplom_qaguru/blob/master/resources/tg.png)
+
