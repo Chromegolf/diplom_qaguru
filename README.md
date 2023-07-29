@@ -15,3 +15,18 @@ reqres - API
 - Получение списка пользователей
 - Получение количества пользователей на странице
 - Поиск не существующего пользователя
+
+## Запуск тестов в Jenkins
+Jenkins job url: https://jenkins.autotests.cloud/job/diplom/
+```sh
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pytest .
+```
+
+В результате генерируется allure-отчет
+- Пример отчета: https://jenkins.autotests.cloud/job/diplom/59/allure/
+
+По результату прогона отправляется уведомление в телеграм:
+
