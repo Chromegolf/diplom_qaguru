@@ -20,8 +20,10 @@ reqres - API
 - Получение количества пользователей на странице
 - Поиск не существующего пользователя
 
-## Запуск тестов в Jenkins
+## Выполнена интеграция проекта с Jenkins
+![jenkins](/resources/jenkins.png)
 Jenkins job url: https://jenkins.autotests.cloud/job/diplom/
+Пример комады запуска тестов (api + ui) 
 ```sh
 python -m venv .venv
 source .venv/bin/activate
@@ -30,9 +32,10 @@ pytest .
 ```
 
 В результате генерируется allure-отчет
+![jenkins](/resources/allure report.png)
 - Пример отчета: https://jenkins.autotests.cloud/job/diplom/59/allure/
 
 По результату прогона отправляется уведомление в телеграм:
-![Текст с описанием картинки](/resources/tg.png)
+![tg bot](/resources/tg.png)
 
 
