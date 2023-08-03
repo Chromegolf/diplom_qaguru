@@ -4,7 +4,7 @@ from package.tooltip_page import TooltipPage
 tooltips = TooltipPage()
 
 @allure.title('Проверка тултипов страницы')
-def test_confirm_alert_field():
+def test_confirm_alert_field(setup_browser):
     with allure.step('Открываем страницу тултипов'):
         tooltips.open()
     with allure.step('Устанавливаем фокус на поле'):
