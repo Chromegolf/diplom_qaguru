@@ -22,8 +22,9 @@ reqres - API
 
 ## Выполнена интеграция проекта с Jenkins
 ![jenkins](/resources/jenkins.png)
-Jenkins job url: https://jenkins.autotests.cloud/job/diplom/
-Пример комады запуска тестов (api + ui) 
+- Пример интеграции проекта с Jenkins job url: https://jenkins.autotests.cloud/job/diplom/
+
+Запуск тестов (api + ui) производится командой 
 ```sh
 python -m venv .venv
 source .venv/bin/activate
@@ -31,11 +32,14 @@ pip install -r requirements.txt
 pytest .
 ```
 
-В результате выполнения jenkins job, генерируется allure-отчет
+## В результате выполнения jenkins job, генерируется Allure report
 ![allure](/resources/allurerport.png)
 - Пример отчета: https://jenkins.autotests.cloud/job/diplom/59/allure/
 
-По результату прогона отправляется уведомление в телеграм:
+## Выполнена интеграция проекта с Allure TestOps
+![allure](/resources/allureto.png)
+
+## По результату прогона отправляется уведомление в телеграм:
 ![tg bot](/resources/tg.png)
 
 
