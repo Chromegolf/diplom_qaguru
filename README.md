@@ -38,6 +38,7 @@ pytest .
 
 ## Выполнена интеграция проекта с Allure TestOps
 ![allure](/resources/allureto.png)
+- Пример отчета: https://allure.autotests.cloud/project/3582/dashboards
 
 ## По результату прогона отправляется уведомление в телеграм:
 ![tg bot](/resources/tg.png)
