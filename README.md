@@ -34,7 +34,7 @@ pytest .
 
 ## В результате выполнения jenkins job, генерируется Allure report
 ![allure](/resources/allurerport.png)
-![allure](/resources/allurerport2.png)
+![allure2](/resources/allurerport2.png)
 - Пример отчета: https://jenkins.autotests.cloud/job/diplom/59/allure/
 
 ## Выполнена интеграция проекта с Allure TestOps
