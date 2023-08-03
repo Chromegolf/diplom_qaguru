@@ -32,7 +32,7 @@ pytest .
 ```
 
 В результате выполнения jenkins job, генерируется allure-отчет
-![jenkins](/resources/allurereport.png)
+![allure](/resources/allurerport.png)
 - Пример отчета: https://jenkins.autotests.cloud/job/diplom/59/allure/
 
 По результату прогона отправляется уведомление в телеграм:
