@@ -31,8 +31,8 @@ pip install -r requirements.txt
 pytest .
 ```
 
-В результате генерируется allure-отчет
-![jenkins](/resources/allure report.png)
+В результате выполнения jenkins job, генерируется allure-отчет
+![jenkins](/resources/allurereport.png)
 - Пример отчета: https://jenkins.autotests.cloud/job/diplom/59/allure/
 
 По результату прогона отправляется уведомление в телеграм:
