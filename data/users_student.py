@@ -36,3 +36,11 @@ class User:
     current_address: str
     state: str
     city: str
+
+
+@dataclass
+class UserRequired:
+    first_name: str
+    last_name: str
+    phone: str
+    gender: List[Gender]

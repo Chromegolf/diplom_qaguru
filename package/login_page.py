@@ -1,4 +1,4 @@
-from selene import browser, be, have, command
+from selene import browser
 from data.users_book_store import BookUser
 
 class LoginPage:
@@ -13,6 +13,9 @@ class LoginPage:
 
     def auth(self, user: BookUser):
         self.set_user_info(user.username, user.password)
+        browser.element("#login").click()
+
+    def go_to_auth(self):
         browser.element("#login").click()
 
     def exit(self):

@@ -1,7 +1,7 @@
 import allure
 from jsonschema.validators import validate
-from helper import load_json_schema, CustomSession, reqres_session
-##test
+from helper import load_json_schema, reqres_session
+
 @allure.tag('api')
 @allure.title('Получение списка пользователей')
 def test_requested_page_number():
@@ -122,7 +122,7 @@ def test_registration_successful():
 
 
 @allure.tag('api')
-@allure.title('Успешная авторизация пользователя')
+@allure.title('с')
 def test_authorization_successful():
     schema = load_json_schema("post_authorization_successful.json")
 

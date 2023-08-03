@@ -1,9 +1,7 @@
-from data.users_student import User, Gender, Subject, Hobby
+from data.users_student import User, UserRequired, Gender, Subject, Hobby
 from package.registration_page import RegistrationPage
 from datetime import date
-from utils import attach
 import allure
-from selene import browser
 
 
 @allure.tag('ui')
@@ -41,7 +39,30 @@ def test_student_registration_form(setup_browser):
     with allure.step("Проверяем соответствие заполненных данных переданным"):
         reg_page.should_registered_user(student)
 
-    attach.add_html(browser)
-    attach.add_logs(browser)
-    attach.add_screenshot(browser)
-    attach.add_video(browser)
+@allure.tag('ui')
+@allure.title('Создание пользователя с заполнением только обязательных полей')
+def test_registration_with_only_required_field(setup_browser):
+    student = UserRequired(
+        first_name='Ivan',
+        last_name='Ivanov',
+        phone='8800100300',
+        gender=Gender.male.value
+    )
+
+    reg_page = RegistrationPage()
+
+    with allure.step("Открываем страницу регистрации"):
+        reg_page.open()
+
+    with allure.step("Заполняем данные студента"):
+        reg_page.register_only_required(student)
+
+    with allure.step("Сохраняем данные студента"):
+        reg_page.submit()
+
+    # THEN
+    with allure.step("Проверяем соответствие заполненных данных переданным"):
+        reg_page.should_required_registered_user(
+            [('Student Name', 'Ivanov Ivan'),
+             ('Mobile', '8800100300'),
+             ('Gender', 'Male')])

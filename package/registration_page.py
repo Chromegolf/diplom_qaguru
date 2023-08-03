@@ -1,6 +1,6 @@
 from selene import browser, have, command
 from test.conftest import RESOURCE_PATH
-from data.users_student import User
+from data.users_student import User, UserRequired
 
 class RegistrationPage:
 
@@ -15,11 +15,18 @@ class RegistrationPage:
 
     def set_gender(self, value):
         browser.all('[name=gender]').element_by(have.value(value)).element('..').click()
-        ##browser.element('[for="gender-radio-1"]').click()
         return self
 
     def set_contact_info(self, email, phone):
         browser.element("#userEmail").type(email)
+        browser.element('[id=userNumber]').type(phone)
+        return self
+
+    def set_email(self, email):
+        browser.element("#userEmail").type(email)
+        return self
+
+    def set_phone(self, phone):
         browser.element('[id=userNumber]').type(phone)
         return self
 
@@ -33,15 +40,11 @@ class RegistrationPage:
         return self
 
     def set_subjects(self, subjects):
-        ##browser.element("#subjectsInput").type(first_subjects).press_enter()
-        ##browser.element("#subjectsInput").type(second_subjects).press_enter()
         for subject in subjects:
             browser.element('#subjectsInput').type(subject).press_tab()
         return self
 
     def set_hobbies(self, hobbies):
-        ##browser.element('[for="hobbies-checkbox-2"]').click()
-        ##browser.all('#hobbiesWrapper .custom-checkbox').element_by(have.exact_text(value)).click()
         for hobbie in hobbies:
             browser.all('#hobbiesWrapper .custom-checkbox').element_by(have.exact_text(hobbie)).click()
         return self
@@ -96,3 +99,13 @@ class RegistrationPage:
         self.set_picture(user.upload_picture)
         self.set_current_address(user.current_address)
         self.set_state_and_city(user.state, user.city)
+
+    def should_required_registered_user(self, data):
+        rows = browser.all('.modal-content tbody tr')
+        for row, value in data:
+            rows.element_by(have.text(row)).all('td')[1].should(have.exact_text(value))
+    def register_only_required(self, user: UserRequired):
+        self.set_user_info(user.last_name, user.first_name)
+        self.set_gender(user.gender)
+        self.set_phone(user.phone)
+

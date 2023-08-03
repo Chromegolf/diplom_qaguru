@@ -46,5 +46,3 @@ class CustomSession(Session):
         return response
 
 reqres_session = CustomSession('https://reqres.in')
-
-##test
