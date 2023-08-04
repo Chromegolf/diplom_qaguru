@@ -122,7 +122,7 @@ def test_registration_successful():
 
 
 @allure.tag('api')
-@allure.title('с')
+@allure.title('Успешная авторизация')
 def test_authorization_successful():
     schema = load_json_schema("post_authorization_successful.json")
 

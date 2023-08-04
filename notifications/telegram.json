@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "diplom",
+    "environment": "env",
+    "comment": "some comment",
+    "reportLink": "https://jenkins.autotests.cloud/job/diplom/6/",
+    "language": "ru",
+    "messenger": "telegram",
+    "allureFolder": "allure-report",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6018107348:AAGTItYyPjSU1d3uSlsHqsIVYcNXihvXHKE",
+    "chat": "257199291 ",
+    "replyTo": ""
+  }
+}
