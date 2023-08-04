@@ -2,7 +2,7 @@
   "base": {
     "project": "${JOB_BASE_NAME}",
     "environment": "CHROME v.100",
-    "comment": "Homework telegram report",
+    "comment": "telegram report",
     "reportLink": "${BUILD_URL}",
     "language": "en",
     "messenger": "telegram",
@@ -10,8 +10,8 @@
     "enableChart": true
   },
   "telegram": {
-    "token": "6018107348:AAGTItYyPjSU1d3uSlsHqsIVYcNXihvXHKE",
-    "chat": "257199291",
+    "token": "",
+    "chat": "",
     "replyTo": ""
   }
 }
