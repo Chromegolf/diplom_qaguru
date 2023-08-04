@@ -1,12 +1,12 @@
 {
   "base": {
     "project": "${JOB_BASE_NAME}",
-    "environment": "env",
-    "comment": "some comment",
+    "environment": "CHROME v.100",
+    "comment": "Homework telegram report",
     "reportLink": "${BUILD_URL}",
-    "language": "ru",
+    "language": "en",
     "messenger": "telegram",
-    "allureFolder": "allure-report",
+    "allureFolder": "allure-report/",
     "enableChart": true
   },
   "telegram": {
