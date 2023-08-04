@@ -1,9 +1,9 @@
 {
   "base": {
-    "project": "diplom",
+    "project": "${JOB_BASE_NAME}",
     "environment": "env",
     "comment": "some comment",
-    "reportLink": "https://jenkins.autotests.cloud/job/diplom/6/",
+    "reportLink": "${BUILD_URL}",
     "language": "ru",
     "messenger": "telegram",
     "allureFolder": "allure-report",
