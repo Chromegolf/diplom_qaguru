@@ -1,5 +1,15 @@
 # Проект автотестов UI + API
 
+## Стек и технологии
+Проект автотестов написаны на Python с использованием Selene для UI-тестов и pytest для API-тестов.
+Примененные технологии в проекте:
+- Allure
+- Allure TestOps
+- Jenkins
+- Selenoid
+
+
+
 ## Покрытый функционал
 DemoQA - UI
 - Заполнение формы студента
@@ -20,8 +30,11 @@ reqres - API
 - Получение количества пользователей на странице
 - Поиск не существующего пользователя
 
-## Запуск тестов в Jenkins
-Jenkins job url: https://jenkins.autotests.cloud/job/diplom/
+## Выполнена интеграция проекта с Jenkins
+![jenkins](/resources/jenkins.png)
+- Пример интеграции проекта с Jenkins job url: https://jenkins.autotests.cloud/job/diplom/
+
+Запуск тестов (api + ui) производится командой 
 ```sh
 python -m venv .venv
 source .venv/bin/activate
@@ -29,10 +42,16 @@ pip install -r requirements.txt
 pytest .
 ```
 
-В результате генерируется allure-отчет
-- Пример отчета: https://jenkins.autotests.cloud/job/diplom/59/allure/
+## В результате выполнения jenkins job, генерируется Allure report
+![allure](/resources/allurerport.png)
+![allure2](/resources/allurereport2.png)
+- Пример отчета: https://jenkins.autotests.cloud/job/diplom/66/allure/
 
-По результату прогона отправляется уведомление в телеграм:
-![Текст с описанием картинки](/resources/tg.png)
+## Выполнена интеграция проекта с Allure TestOps
+![allure](/resources/allureto.png)
+- Пример отчета: https://allure.autotests.cloud/project/3582/dashboards
+
+## По результату прогона отправляется уведомление в телеграм:
+![tg bot](/resources/tg.png)
 
 
